@@ -47,7 +47,7 @@ function Submenu(props: TProps) {
             {header}
             <RiArrowDropDownLine
               className={`absolute transition-all duration-150 ease-linear right-0 top-[.1rem] text-2xl ${
-                open ? "rotate-180" : ""
+                open ? "rotate-60" : "-rotate-90"
               }`}
             />
           </Disclosure.Button>

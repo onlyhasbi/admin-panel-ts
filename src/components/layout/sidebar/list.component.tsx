@@ -2,9 +2,9 @@ import Submenu from "./submenu.component";
 import Label from "@/components/common/label";
 import Link from "next/link";
 import clsx from "clsx";
+import _ from "lodash";
 import { selectedContainerStyle, selectedTextStyle } from "./selected.style";
 import { useMemo } from "react";
-import _ from "lodash";
 
 type TMenu = {
   path: string;
