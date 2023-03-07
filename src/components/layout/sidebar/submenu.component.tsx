@@ -7,22 +7,22 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { useMemo } from "react";
 
 interface Item {
-  label: string;
+  label?: string;
   path: string;
-  icon: JSX.Element;
+  icon?: JSX.Element;
 }
 
-interface props {
+interface Props {
   label: string;
   items: {
-    label: string;
+    label?: string;
     path: string;
-    icon: JSX.Element;
+    icon?: JSX.Element;
   }[];
   currentPath: string;
 }
 
-function Submenu({ label: parentLabel, items, currentPath }: props) {
+function Submenu({ label: parentLabel, items, currentPath }: Props) {
   const list = useMemo(() => {
     return items.map((item: Item, index) => {
       const { label, path, icon } = item;
