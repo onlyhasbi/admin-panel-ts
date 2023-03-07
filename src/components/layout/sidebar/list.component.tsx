@@ -6,7 +6,7 @@ import { selectedContainerStyle, selectedTextStyle } from "./selected.style";
 import { useMemo } from "react";
 
 interface props {
-  items: ({
+  items: {
     label: string;
     path: string;
     icon?: JSX.Element;
@@ -15,7 +15,7 @@ interface props {
       path: string;
       icon: JSX.Element;
     }[];
-  })[];
+  }[];
   currentPath: string;
 }
 

@@ -1,8 +1,8 @@
 import { pathToLabel } from "@/components/utils/pathToLabel";
 
 interface headingProps {
-  pathName: String;
-  username: String;
+  pathName: string;
+  username: string;
 }
 
 function Heading({ pathName, username }: headingProps) {
