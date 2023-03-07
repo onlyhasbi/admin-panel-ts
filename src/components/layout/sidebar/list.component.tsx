@@ -4,37 +4,46 @@ import Link from "next/link";
 import clsx from "clsx";
 import { selectedContainerStyle, selectedTextStyle } from "./selected.style";
 import { useMemo } from "react";
+import _ from "lodash";
 
-interface props {
-  items: {
-    label: string;
-    path: string;
-    icon?: JSX.Element;
-    submenu?: {
-      label: string;
-      path: string;
-      icon: JSX.Element;
-    }[];
-  }[];
+type TMenu = {
+  path: string;
+  label?: string;
+  icon?: JSX.Element;
+};
+
+type TSubmenu = {
+  header: string;
+  submenu: TMenu[];
+};
+
+type TElement = TMenu | TSubmenu;
+
+type TProps = {
+  items: TElement[];
   currentPath: string;
-}
+};
 
-function List({ items, currentPath }: props) {
+function List(props: TProps) {
+  const { items, currentPath } = props;
   const list = useMemo(() => {
-    return items.map((item, index) => {
-      const { label, path, icon, submenu } = item;
-      const active = path === currentPath;
+    return items.map((item: TElement, index: number) => {
+      const isSubmenu = _.has(item, "submenu");
 
-      if (submenu) {
+      if (isSubmenu) {
+        const { header, submenu } = item as TSubmenu;
         return (
           <Submenu
             key={index}
-            label={label}
+            header={header}
             items={submenu}
             currentPath={currentPath}
           />
         );
       }
+
+      const { label, path, icon } = item as TMenu;
+      const active = path === currentPath;
 
       return (
         <Link key={index} href={path} className="relative">

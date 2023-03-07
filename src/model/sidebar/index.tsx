@@ -11,7 +11,7 @@ export const sidebarModel = [
   { label: "Building", path: "/building", icon: <RiBuildingLine /> },
   { label: "Tenant", path: "/tenant", icon: <RiGroupLine /> },
   {
-    label: "Management",
+    header: "Management",
     submenu: [
       { label: "Audit", path: "/management/audit", icon: <RiFolder2Line /> },
       {

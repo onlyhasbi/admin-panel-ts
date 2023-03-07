@@ -6,27 +6,24 @@ import { selectedContainerStyle, selectedTextStyle } from "./selected.style";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useMemo } from "react";
 
-interface Item {
-  label?: string;
+type TItem = {
   path: string;
+  label?: string;
   icon?: JSX.Element;
-}
+};
 
-interface Props {
-  label: string;
-  items: {
-    label?: string;
-    path: string;
-    icon?: JSX.Element;
-  }[];
+type TProps = {
+  header: string;
+  items: TItem[];
   currentPath: string;
-}
+};
 
-function Submenu({ label: parentLabel, items, currentPath }: Props) {
+function Submenu(props: TProps) {
+  const { header, items, currentPath } = props;
   const list = useMemo(() => {
-    return items.map((item: Item, index) => {
+    return items.map((item: TItem, index: number) => {
       const { label, path, icon } = item;
-      const active: boolean = path === currentPath;
+      const active = path === currentPath;
 
       return (
         <Link key={index} href={path} className="relative">
@@ -47,7 +44,7 @@ function Submenu({ label: parentLabel, items, currentPath }: Props) {
       {({ open }) => (
         <>
           <Disclosure.Button className="relative text-left text-white pl-3 mt-3 mb-2">
-            {parentLabel}
+            {header}
             <RiArrowDropDownLine
               className={`absolute transition-all duration-150 ease-linear right-0 top-[.1rem] text-2xl ${
                 open ? "rotate-180" : ""

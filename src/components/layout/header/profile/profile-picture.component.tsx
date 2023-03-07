@@ -4,9 +4,15 @@ import { Popover, Transition } from "@headlessui/react";
 import { profileModel } from "@/model/profile";
 import { Fragment, useMemo } from "react";
 
+type TItem = {
+  path: string;
+  label?: string;
+  icon?: JSX.Element;
+};
+
 function ProfilePicture() {
   const list = useMemo(() => {
-    return profileModel.map((item) => {
+    return profileModel.map((item: TItem) => {
       const { label, path, icon } = item;
 
       return (
