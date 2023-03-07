@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 import { omit } from "lodash";
 import type { InputHTMLAttributes } from "react";
 
-type InputProps = {
+type TProps = {
   label?: string;
   name: string;
   placeholder?: string;
@@ -16,8 +16,8 @@ type InputProps = {
   onSearch: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Search = forwardRef<HTMLInputElement, InputProps>(function Search(
-  props: InputProps,
+const Search = forwardRef<HTMLInputElement, TProps>(function Search(
+  props: TProps,
   ref
 ) {
   const {

@@ -4,26 +4,26 @@ import { forwardRef, useMemo } from "react";
 import { omit } from "lodash";
 import type { InputHTMLAttributes } from "react";
 
-type Option = {
+type TOption = {
   label: string;
   value: number;
 };
 
-type Options = Option[];
+type TOptions = TOption[];
 
-type Props = {
+type TProps = {
   name: string;
-  options: Options;
+  options: TOptions;
   className?: string;
   label?: string;
   labelStyle?: string;
 } & InputHTMLAttributes<HTMLSelectElement>;
 
-const Select = forwardRef<HTMLSelectElement, Props>((props: Props, ref) => {
+const Select = forwardRef<HTMLSelectElement, TProps>((props: TProps, ref) => {
   const { name, options, className, label, labelStyle, ...rest } = props;
 
   const list = useMemo(() => {
-    return options.map(({ label, value }: Option, index) => {
+    return options.map(({ label, value }: TOption, index:number) => {
       return (
         <option key={index} value={value}>
           {label}

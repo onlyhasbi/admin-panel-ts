@@ -6,7 +6,7 @@ import { Transition } from "@headlessui/react";
 import { useRef } from "react";
 import type { HTMLAttributes, ReactElement } from "react";
 
-type Props = {
+type TProps = {
   onOpen: boolean;
   className?: string;
   onClose: () => void;
@@ -15,7 +15,7 @@ type Props = {
   children: ReactElement;
 } & HTMLAttributes<HTMLDivElement>;
 
-function Modal(props: Props) {
+function Modal(props: TProps) {
   const {
     onOpen,
     className,
@@ -73,20 +73,20 @@ function Modal(props: Props) {
   );
 }
 
-type Title = {
+type TTitle = {
   title?: string;
 };
 
-function Title({ title }: Title) {
+function Title({ title }: TTitle) {
   return title ? <h2 className="text-lg font-semibold">{title}</h2> : null;
 }
 
-type Close = {
+type TClose = {
   active?: boolean;
   handleClose: () => void;
 };
 
-function Close({ active, handleClose }: Close) {
+function Close({ active, handleClose }: TClose) {
   return active ? (
     <span className="p-1 rounded-full hover:bg-slate-50 cursor-pointer absolute -right-2">
       <RiCloseLine onClick={handleClose} />

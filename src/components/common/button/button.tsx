@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import { HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 
-type Props = {
+type TProps = {
   danger?: boolean;
   warning?: boolean;
   primary?: boolean;
@@ -14,7 +14,7 @@ function Button({
   warning,
   primary,
   ...rest
-}: Props) {
+}: TProps) {
   const classes = clsx([
     { "bg-red-600": danger },
     { "bg-yellow-400": warning },

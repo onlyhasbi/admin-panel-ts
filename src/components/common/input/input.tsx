@@ -4,7 +4,7 @@ import { omit } from "lodash";
 import { forwardRef } from "react";
 import type { InputHTMLAttributes } from "react";
 
-type InputProps = {
+type TProps = {
   label?: string;
   name: string;
   placeholder?: string;
@@ -12,8 +12,8 @@ type InputProps = {
   labelStyle?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  props: InputProps,
+const Input = forwardRef<HTMLInputElement, TProps>(function Input(
+  props: TProps,
   ref
 ) {
   const { label, name, placeholder, inputStyle, labelStyle, ...rest } = props;

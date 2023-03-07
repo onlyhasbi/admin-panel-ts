@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import type { HTMLAttributes, ReactElement } from "react";
 
-interface Props extends HTMLAttributes<HTMLElement> {
+type TProps = {
   iconStyle?: string;
   textStyle?: string;
   label?: string;
   icon?: ReactElement;
-}
+} & HTMLAttributes<HTMLElement>;
 
-function Label(props: Props) {
+function Label(props: TProps) {
   const { className, iconStyle, textStyle, label, icon, ...rest } = props;
 
   const render = icon ? (

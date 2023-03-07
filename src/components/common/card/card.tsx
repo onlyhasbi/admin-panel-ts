@@ -1,8 +1,8 @@
-import { HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 
-type Props = HTMLAttributes<HTMLDivElement>;
+type TProps = HTMLAttributes<HTMLDivElement>;
 
-function Card(props: Props) {
+function Card(props: TProps) {
   const { className, children } = props;
 
   return (

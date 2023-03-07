@@ -3,19 +3,19 @@ import Labeled from "./labeled";
 import { forwardRef, useReducer } from "react";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import { omit } from "lodash";
-import type{InputHTMLAttributes} from 'react'
+import type { InputHTMLAttributes } from "react";
 
-type InputProps = {
+type TProps = {
   label?: string;
   name: string;
   placeholder?: string;
   labelStyle?: string;
   inputStyle?: string;
   className?: string;
-}& InputHTMLAttributes<HTMLInputElement>;
+} & InputHTMLAttributes<HTMLInputElement>;
 
-const Password = forwardRef<HTMLInputElement, InputProps>(function Password(
-  props: InputProps,
+const Password = forwardRef<HTMLInputElement, TProps>(function Password(
+  props: TProps,
   ref
 ) {
   const [isShowPassword, toggle] = useReducer((show) => !show, false);

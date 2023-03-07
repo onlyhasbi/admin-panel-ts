@@ -2,22 +2,22 @@ import Radio from "./radio.component";
 import { forwardRef, useMemo } from "react";
 import type { InputHTMLAttributes } from "react";
 
-type Option = {
+type TOption = {
   value: any;
   label: string;
 };
 
-type Options = Option[];
+type TOptions = TOption[];
 
-type Props = {
-  options: Options;
+type TProps = {
+  options: TOptions;
   name: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Radios = forwardRef<HTMLInputElement, Props>(
-  ({ options, name, ...rest }: Props, ref) => {
+const Radios = forwardRef<HTMLInputElement, TProps>(
+  ({ options, name, ...rest }: TProps, ref) => {
     return useMemo<any>(() => {
-      return options.map((option: Option) => {
+      return options.map((option: TOption) => {
         const { value, label } = option;
         return (
           <Radio

@@ -1,4 +1,4 @@
-interface TProps {
+type TProps = {
   fullname: string;
   role: string;
 }

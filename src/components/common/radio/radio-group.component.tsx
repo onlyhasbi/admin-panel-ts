@@ -1,9 +1,8 @@
 import clsx from "clsx";
 import Labeled from "../input/labeled";
-import { forwardRef } from "react";
 import type { ReactElement, InputHTMLAttributes } from "react";
 
-type Props = {
+type TProps = {
   label?: string;
   labelStyle?: string;
   vertical?: boolean;
@@ -11,7 +10,7 @@ type Props = {
   className?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-function RadioGroup(props: Props) {
+function RadioGroup(props: TProps) {
   const { className, children, label, labelStyle, vertical } = props;
 
   const radioGroup = (

@@ -1,14 +1,14 @@
 import { forwardRef } from "react";
 import type { InputHTMLAttributes } from "react";
 
-type InputProps = {
+type TProps = {
   name: string;
   value?: string;
   label?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Radio = forwardRef<HTMLInputElement, InputProps>(
-  (props: InputProps, ref) => {
+const Radio = forwardRef<HTMLInputElement, TProps>(
+  (props: TProps, ref) => {
     const { name, value, label, ...rest } = props;
 
     return (

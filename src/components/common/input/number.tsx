@@ -4,7 +4,7 @@ import { NumericFormat } from "react-number-format";
 import { omit } from "lodash";
 import { forwardRef } from "react";
 
-type InputProps = {
+type TProps = {
   label?: string;
   name: string;
   placeholder?: string;
@@ -13,8 +13,8 @@ type InputProps = {
   inputStyle?: string;
 };
 
-const Number = forwardRef<HTMLInputElement, InputProps>(function Number(
-  props: InputProps,
+const Number = forwardRef<HTMLInputElement, TProps>(function Number(
+  props: TProps,
   ref
 ) {
   const {

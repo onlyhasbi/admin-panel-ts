@@ -1,11 +1,12 @@
 import Header from "./header";
 import Sidebar from "./sidebar";
+import type { ReactNode } from "react";
 
-interface props {
-  children: React.ReactNode;
-}
+type TProps = {
+  children: ReactNode;
+};
 
-function Layout({ children }: props) {
+function Layout({ children }: TProps) {
   return (
     <div className="flex min-h-screen">
       <Sidebar />

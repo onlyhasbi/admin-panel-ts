@@ -3,7 +3,7 @@ import Labeled from "../input/labeled";
 import { forwardRef } from "react";
 import type { TextareaHTMLAttributes } from "react";
 
-type Props = {
+type TProps = {
   label?: string;
   labelStyle?: string;
   name: string;
@@ -13,7 +13,7 @@ type Props = {
   className?: string;
 } & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-const TextArea = forwardRef<HTMLTextAreaElement, Props>((props: Props, ref) => {
+const TextArea = forwardRef<HTMLTextAreaElement, TProps>((props: TProps, ref) => {
   const { label, labelStyle, name, row, col, placeholder, className, ...rest } =
     props;
   const textarea = (

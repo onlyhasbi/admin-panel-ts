@@ -2,14 +2,14 @@ import Card from "@/components/common/card";
 import Label from "@/components/common/label";
 import { RiHistoryLine } from "react-icons/ri";
 
-type Props = {
+type TProps = {
   label?: string,
   value?: string,
   icon?: JSX.Element,
   bgicon?: string,
 };
 
-function CardInfo({ label, value, icon, bgicon }: Props) {
+function CardInfo({ label, value, icon, bgicon }: TProps) {
   return (
     <Card className="w-[14rem] h-[9.6rem] relative flex items-center justify-center gap-x-5 border rounded-lg shadow-md">
       <div
