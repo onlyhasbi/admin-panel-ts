@@ -8,15 +8,15 @@ import { useMemo } from "react";
 interface props {
   items: ({
     label: string;
-    path?: string;
+    path: string;
     icon?: JSX.Element;
     submenu?: {
-      label: String;
-      path: String;
+      label: string;
+      path: string;
       icon: JSX.Element;
     }[];
   })[];
-  currentPath: String;
+  currentPath: string;
 }
 
 function List({ items, currentPath }: props) {
@@ -37,7 +37,7 @@ function List({ items, currentPath }: props) {
       }
 
       return (
-        <Link key={index} href={String(path)} className="relative">
+        <Link key={index} href={path} className="relative">
           <Label
             label={label}
             icon={icon}

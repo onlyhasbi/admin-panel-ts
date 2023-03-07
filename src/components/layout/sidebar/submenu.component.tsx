@@ -6,30 +6,30 @@ import { selectedContainerStyle, selectedTextStyle } from "./selected.style";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useMemo } from "react";
 
-interface item {
-  label: String;
-  path: String;
+interface Item {
+  label: string;
+  path: string;
   icon: JSX.Element;
 }
 
 interface props {
-  label: String;
+  label: string;
   items: {
-    label: String;
-    path: String;
+    label: string;
+    path: string;
     icon: JSX.Element;
   }[];
-  currentPath: String;
+  currentPath: string;
 }
 
 function Submenu({ label: parentLabel, items, currentPath }: props) {
   const list = useMemo(() => {
-    return items.map((item: item, index) => {
+    return items.map((item: Item, index) => {
       const { label, path, icon } = item;
       const active: boolean = path === currentPath;
 
       return (
-        <Link key={index} href={String(path)} className="relative">
+        <Link key={index} href={path} className="relative">
           <Label
             label={label}
             icon={icon}

@@ -1,6 +1,6 @@
 interface props {
-  fullname: String;
-  role: String;
+  fullname: string;
+  role: string;
 }
 
 function ProfileInfo({ fullname, role }: props) {
